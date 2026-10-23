@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import FloatingContact from "./components/FloatingContact";
+
+import Home from "./components/Home";
+import About from "./components/About";
+import SafetyNets from "./components/SafetyNets";
+import Contact from "./components/Contact";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/safety-nets" element={<SafetyNets />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="*"
+            element={
+              <section className="page-banner">
+                <h1>Page Not Found</h1>
+                <p>The page you requested does not exist.</p>
+              </section>
+            }
+          />
+        </Routes>
+      </main>
+
+      <Footer />
+      <FloatingContact />
+    </>
+  );
+}
