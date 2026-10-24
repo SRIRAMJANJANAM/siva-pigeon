@@ -9,8 +9,8 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-const PHONE = "919940399826";
-const DISPLAY_PHONE = "+91 99403 99826";
+const PHONE = "919791170467";
+const DISPLAY_PHONE = "+91 97911 70467";
 
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello Siva Safety Nets, I would like to enquire about your safety net and invisible grill services."

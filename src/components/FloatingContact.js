@@ -1,7 +1,7 @@
 import React from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
-const PHONE = "919940399826";
+const PHONE = "919791170467";
 
 export default function FloatingContact() {
   const whatsappMessage = encodeURIComponent(
